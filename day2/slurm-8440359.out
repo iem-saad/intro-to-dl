@@ -1,0 +1,34 @@
+The following modules were not unloaded:
+  (Use "module --force purge" to unload all):
+
+  1) ModuleLabel/label   2) lumi-tools/24.05   3) init-lumi/0.2
+
+The following sticky modules could not be reloaded:
+
+  1) lumi-tools
+NOTE: This module uses Singularity. Some commands execute inside the container
+(e.g. python3, pip3).
+
+This module has been installed by CSC.
+
+Documentation: https://docs.csc.fi/apps/pytorch/
+Support: https://docs.csc.fi/support/contact/
+
+python3 $*
++ python3 pytorch_20ng_bert_tuned.py
+/usr/local/lib/python3.10/dist-packages/transformers/tokenization_utils_base.py:1601: FutureWarning: `clean_up_tokenization_spaces` was not set. It will be set to `True` by default. This behavior will be depracted in transformers v4.45, and will be then set to `False` by default. For more details check this issue: https://github.com/huggingface/transformers/issues/31884
+  warnings.warn(
+Some weights of BertForSequenceClassification were not initialized from the model checkpoint at bert-base-uncased and are newly initialized: ['classifier.bias', 'classifier.weight']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+/usr/local/lib/python3.10/dist-packages/transformers/optimization.py:591: FutureWarning: This implementation of AdamW is deprecated and will be removed in a future version. Use the PyTorch implementation torch.optim.AdamW instead, or set `no_deprecation_warning=True` to disable this warning
+  warnings.warn(
+Using PyTorch version: 2.4.1+rocm6.1  Device: cuda
+Epoch 1: train loss: 2.905897 train accuracy: 8.22%, val accuracy: 14.62%
+Epoch 2: train loss: 2.332537 train accuracy: 24.52%, val accuracy: 35.44%
+Epoch 3: train loss: 1.930936 train accuracy: 37.79%, val accuracy: 44.19%
+Epoch 4: train loss: 1.712837 train accuracy: 45.22%, val accuracy: 47.12%
+Epoch 5: train loss: 1.579195 train accuracy: 48.89%, val accuracy: 50.12%
+Epoch 6: train loss: 1.515413 train accuracy: 51.14%, val accuracy: 51.62%
+Total training time: 0:10:24.924243.
+
+Testing: accuracy: 52.02%

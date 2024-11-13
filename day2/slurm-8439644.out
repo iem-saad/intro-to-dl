@@ -1,0 +1,87 @@
+The following modules were not unloaded:
+  (Use "module --force purge" to unload all):
+
+  1) ModuleLabel/label   2) lumi-tools/24.05   3) init-lumi/0.2
+
+The following sticky modules could not be reloaded:
+
+  1) lumi-tools
+NOTE: This module uses Singularity. Some commands execute inside the container
+(e.g. python3, pip3).
+
+This module has been installed by CSC.
+
+Documentation: https://docs.csc.fi/apps/pytorch/
+Support: https://docs.csc.fi/support/contact/
+
+python3 $*
++ python3 pytorch_20ng_rnn.py
+Using PyTorch version: 2.4.1+rocm6.1  Device: cuda
+TensorBoard log directory: /pfs/lustrep1/users/sabdulla/PDL-2024-11/intro-to-dl/day2/logs/20ng-rnn-2024-11-13_13-06-14
+Indexing word vectors.
+Found 400001 word vectors.
+Processing text dataset
+- alt.atheism 0
+- comp.graphics 1
+- comp.os.ms-windows.misc 2
+- comp.sys.ibm.pc.hardware 3
+- comp.sys.mac.hardware 4
+- comp.windows.x 5
+- misc.forsale 6
+- rec.autos 7
+- rec.motorcycles 8
+- rec.sport.baseball 9
+- rec.sport.hockey 10
+- sci.crypt 11
+- sci.electronics 12
+- sci.med 13
+- sci.space 14
+- soc.religion.christian 15
+- talk.politics.guns 16
+- talk.politics.mideast 17
+- talk.politics.misc 18
+- talk.religion.misc 19
+Found 19997 texts.
+Found 9998 unique tokens.
+Shape of data tensor: (19997, 1000)
+Length of label vector: 19997
+Shape of training data tensor: (14997, 1000)
+Length of training label vector: 14997
+Shape of validation data tensor: (1000, 1000)
+Length of validation label vector: 1000
+Shape of test data tensor: (4000, 1000)
+Length of test label vector: 4000
+Train: 14997 messages
+Validation: 1000 messages
+Test: 4000 messages
+Preparing embedding matrix.
+Shape of embedding matrix: torch.Size([10000, 100])
+Words not found in pre-trained embeddings: 233
+Net(
+  (emb): Embedding(10000, 100)
+  (lstm): LSTM(100, 128, num_layers=2, batch_first=True)
+  (linear): Linear(in_features=128, out_features=20, bias=True)
+)
+Epoch 1: train loss: 2.993124 train accuracy: 6.29%, val accuracy: 8.00%
+Epoch 2: train loss: 2.595306 train accuracy: 11.88%, val accuracy: 14.10%
+Epoch 3: train loss: 2.388561 train accuracy: 16.54%, val accuracy: 14.30%
+Epoch 4: train loss: 2.214112 train accuracy: 21.76%, val accuracy: 19.30%
+Epoch 5: train loss: 2.099257 train accuracy: 25.52%, val accuracy: 16.20%
+Epoch 6: train loss: 2.018959 train accuracy: 28.28%, val accuracy: 25.70%
+Epoch 7: train loss: 1.937409 train accuracy: 30.91%, val accuracy: 24.10%
+Epoch 8: train loss: 1.840605 train accuracy: 33.53%, val accuracy: 21.30%
+Epoch 9: train loss: 1.793402 train accuracy: 34.75%, val accuracy: 29.70%
+Epoch 10: train loss: 1.731620 train accuracy: 37.40%, val accuracy: 23.20%
+Epoch 11: train loss: 1.695491 train accuracy: 38.83%, val accuracy: 33.80%
+Epoch 12: train loss: 1.638309 train accuracy: 40.89%, val accuracy: 28.60%
+Epoch 13: train loss: 1.651075 train accuracy: 40.57%, val accuracy: 30.50%
+Epoch 14: train loss: 1.563249 train accuracy: 44.36%, val accuracy: 34.10%
+Epoch 15: train loss: 1.508753 train accuracy: 45.96%, val accuracy: 33.30%
+Epoch 16: train loss: 1.467849 train accuracy: 47.76%, val accuracy: 25.80%
+Epoch 17: train loss: 1.414621 train accuracy: 49.45%, val accuracy: 43.60%
+Epoch 18: train loss: 1.339565 train accuracy: 52.55%, val accuracy: 39.80%
+Epoch 19: train loss: 1.255708 train accuracy: 56.31%, val accuracy: 46.40%
+Epoch 20: train loss: 1.143070 train accuracy: 60.07%, val accuracy: 54.90%
+Total training time: 0:04:57.999721.
+
+Testing: accuracy: 54.23%

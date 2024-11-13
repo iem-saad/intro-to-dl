@@ -1,0 +1,78 @@
+The following modules were not unloaded:
+  (Use "module --force purge" to unload all):
+
+  1) ModuleLabel/label   2) lumi-tools/24.05   3) init-lumi/0.2
+
+The following sticky modules could not be reloaded:
+
+  1) lumi-tools
+NOTE: This module uses Singularity. Some commands execute inside the container
+(e.g. python3, pip3).
+
+This module has been installed by CSC.
+
+Documentation: https://docs.csc.fi/apps/pytorch/
+Support: https://docs.csc.fi/support/contact/
+
+python3 $*
++ python3 pytorch_gtsrb_vit.py
+Fast image processor class <class 'transformers.models.vit.image_processing_vit_fast.ViTImageProcessorFast'> is available for this model. Using slow image processor class. To use the fast image processor class set `use_fast=True`.
+Some weights of ViTForImageClassification were not initialized from the model checkpoint at google/vit-base-patch16-224 and are newly initialized because the shapes did not match:
+- classifier.bias: found shape torch.Size([1000]) in the checkpoint and torch.Size([43]) in the model instantiated
+- classifier.weight: found shape torch.Size([1000, 768]) in the checkpoint and torch.Size([43, 768]) in the model instantiated
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+Using PyTorch version: 2.4.1+rocm6.1 Transformers version: 4.44.2 Device: cuda
+TensorBoard log directory: /pfs/lustrep1/users/sabdulla/PDL-2024-11/intro-to-dl/day2/logs/gtsrb-vit-2024-11-13_11-27-28
+Train: Found 5535 images belonging to 43 classes
+Validation: Removing directory 00027
+Removing directory 00039
+Found 999 images belonging to 41 classes
+Test: Found 12630 images belonging to 43 classes
+ViTForImageClassification(
+  (vit): ViTModel(
+    (embeddings): ViTEmbeddings(
+      (patch_embeddings): ViTPatchEmbeddings(
+        (projection): Conv2d(3, 768, kernel_size=(16, 16), stride=(16, 16))
+      )
+      (dropout): Dropout(p=0.0, inplace=False)
+    )
+    (encoder): ViTEncoder(
+      (layer): ModuleList(
+        (0-11): 12 x ViTLayer(
+          (attention): ViTSdpaAttention(
+            (attention): ViTSdpaSelfAttention(
+              (query): Linear(in_features=768, out_features=768, bias=True)
+              (key): Linear(in_features=768, out_features=768, bias=True)
+              (value): Linear(in_features=768, out_features=768, bias=True)
+              (dropout): Dropout(p=0.0, inplace=False)
+            )
+            (output): ViTSelfOutput(
+              (dense): Linear(in_features=768, out_features=768, bias=True)
+              (dropout): Dropout(p=0.0, inplace=False)
+            )
+          )
+          (intermediate): ViTIntermediate(
+            (dense): Linear(in_features=768, out_features=3072, bias=True)
+            (intermediate_act_fn): GELUActivation()
+          )
+          (output): ViTOutput(
+            (dense): Linear(in_features=3072, out_features=768, bias=True)
+            (dropout): Dropout(p=0.0, inplace=False)
+          )
+          (layernorm_before): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+          (layernorm_after): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+        )
+      )
+    )
+    (layernorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+  )
+  (classifier): Linear(in_features=768, out_features=43, bias=True)
+)
+Epoch 1: train loss: 2.441644 train accuracy: 45.11%, val accuracy: 72.97%
+Epoch 2: train loss: 0.618512 train accuracy: 92.16%, val accuracy: 92.69%
+Epoch 3: train loss: 0.180287 train accuracy: 99.26%, val accuracy: 95.60%
+Epoch 4: train loss: 0.074132 train accuracy: 99.98%, val accuracy: 96.50%
+Epoch 5: train loss: 0.039939 train accuracy: 100.00%, val accuracy: 96.80%
+Total training time: 0:04:15.379230.
+
+Testing: accuracy: 86.37%

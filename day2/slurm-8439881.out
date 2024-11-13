@@ -1,0 +1,130 @@
+The following modules were not unloaded:
+  (Use "module --force purge" to unload all):
+
+  1) ModuleLabel/label   2) lumi-tools/24.05   3) init-lumi/0.2
+
+The following sticky modules could not be reloaded:
+
+  1) lumi-tools
+NOTE: This module uses Singularity. Some commands execute inside the container
+(e.g. python3, pip3).
+
+This module has been installed by CSC.
+
+Documentation: https://docs.csc.fi/apps/pytorch/
+Support: https://docs.csc.fi/support/contact/
+
+python3 $*
++ python3 pytorch_20ng_bert.py
+/usr/local/lib/python3.10/dist-packages/transformers/tokenization_utils_base.py:1601: FutureWarning: `clean_up_tokenization_spaces` was not set. It will be set to `True` by default. This behavior will be depracted in transformers v4.45, and will be then set to `False` by default. For more details check this issue: https://github.com/huggingface/transformers/issues/31884
+  warnings.warn(
+Some weights of BertForSequenceClassification were not initialized from the model checkpoint at bert-base-uncased and are newly initialized: ['classifier.bias', 'classifier.weight']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+/usr/local/lib/python3.10/dist-packages/transformers/optimization.py:591: FutureWarning: This implementation of AdamW is deprecated and will be removed in a future version. Use the PyTorch implementation torch.optim.AdamW instead, or set `no_deprecation_warning=True` to disable this warning
+  warnings.warn(
+Using PyTorch version: 2.4.1+rocm6.1  Device: cuda
+TensorBoard log directory: /pfs/lustrep1/users/sabdulla/PDL-2024-11/intro-to-dl/day2/logs/20ng-bert-2024-11-13_13-19-25
+Processing text dataset
+- alt.atheism 0
+- comp.graphics 1
+- comp.os.ms-windows.misc 2
+- comp.sys.ibm.pc.hardware 3
+- comp.sys.mac.hardware 4
+- comp.windows.x 5
+- misc.forsale 6
+- rec.autos 7
+- rec.motorcycles 8
+- rec.sport.baseball 9
+- rec.sport.hockey 10
+- sci.crypt 11
+- sci.electronics 12
+- sci.med 13
+- sci.space 14
+- soc.religion.christian 15
+- talk.politics.guns 16
+- talk.politics.mideast 17
+- talk.politics.misc 18
+- talk.religion.misc 19
+Found 19997 texts.
+Length of training texts: 15997
+Length of training labels: 15997
+Length of test texts: 4000
+Length of test labels: 4000
+The first training sentence:
+[CLS] 
+
+In article <C6BFLB.KEM@cs.columbia.edu> ethan@cs.columbia.edu (Ethan Solomita) writes:
+>
+>	Three q's:
+>
+>1) is it reliable?
+
+I use it all day every day (maintaining our ftp site and answering mail
+via support@qdeck.com), and I can honestly say that in the last few
+months I've never had my machine go down due to any sort of tcpip network
+manager instability. (Of course, I've crashed my machine quite a few times
+on purpose, during beta testing and that sort of thing, but the tcpip
+portion is quite stable...)
+
+However, keep in mind that DVX and the network managers are only going
+to be as stable as the software they sit on top of (so if your underlying
+network kernel is flakey, you can't expect DVX to be terribly stable...)
+
+>2) how does it send the information from a MS Windows app over
+>the X11 protocol? Does it just draw everything as graphics into
+>one window, or does it use multiple windows and essentially work
+>more cleverly?
+
+It just goes as a window that has graphics drawn into it. (To vastly
+over-simplify what goes on, we just take the windows graphics API calls,
+and translate them directly to X-protocol; unfortunately, windows was
+not really written to be network-aware, so sometimes we see a speed
+penalty when an app does something stupid, like sending a big white bitmap
+to erase something rather than just drawing a white box; fortunately,
+that sort of thing is rare...)
+
+>3) If I want to run MS Word, for example, remotely, do I have to
+>run a separate copy of MS Windows remotely, and then start MS
+>Word from that, or can MS Word be started remotely on its own?
+
+You need to run MS windows, which Word then runs inside. You could run
+multiple windows programs within the one WinX window, and windows has
+ways to automagically start winapps when you start windows, so in practice
+it's not really a major problem. I have my system set up so that I can
+run WinX, which automatically starts Word Full-screen (for windows), so
+I never see any part of windows but word...)
+
+-- 
+       Quarterdeck Office Systems - Internet Support - Tom Bortels
+ Pricing/Ordering : info@qdeck.com  |  Tech Questions : support@qdeck.com
+  BBS: (310) 314-3227 * FAX: (310) 314-3217 * Compuserve: GO QUARTERDECK
+anonymous ftp: qdeck.com (149.17.8.10), leave your email address as password
+ LABEL: 5
+Initializing BertTokenizer
+The full tokenized first training sentence:
+['[CLS]', 'in', 'article', '<', 'c', '##6', '##bf', '##lb', '.', 'ke', '##m', '@', 'cs', '.', 'columbia', '.', 'ed', '##u', '>', 'ethan', '@', 'cs', '.', 'columbia', '.', 'ed', '##u', '(', 'ethan', 'solo', '##mit', '##a', ')', 'writes', ':', '>', '>', 'three', 'q', "'", 's', ':', '>', '>', '1', ')', 'is', 'it', 'reliable', '?', 'i', 'use', 'it', 'all', 'day', 'every', 'day', '(', 'maintaining', 'our', 'ft', '##p', 'site', 'and', 'answering', 'mail', 'via', 'support', '@', 'q', '##deck', '.', 'com', ')', ',', 'and', 'i', 'can', 'honestly', 'say', 'that', 'in', 'the', 'last', 'few', 'months', 'i', "'", 've', 'never', 'had', 'my', 'machine', 'go', 'down', 'due', 'to', 'any', 'sort', 'of', 'tc', '##pi', '##p', 'network', 'manager', 'instability', '.', '(', 'of', 'course', ',', 'i', "'", 've', 'crashed', 'my', 'machine', 'quite', 'a', 'few', 'times', 'on', 'purpose', ',', 'during', 'beta', 'testing', 'and', 'that', 'sort', 'of', 'thing', ',', 'but', 'the', 'tc', '##pi', '##p', 'portion', 'is', 'quite', 'stable', '.', '.', '.', ')', 'however', ',', 'keep', 'in', 'mind', 'that', 'd', '##v', '##x', 'and', 'the', 'network', 'managers', 'are', 'only', 'going', 'to', 'be', 'as', 'stable', 'as', 'the', 'software', 'they', 'sit', 'on', 'top', 'of', '(', 'so', 'if', 'your', 'underlying', 'network', 'kernel', 'is', 'fl', '##ake', '##y', ',', 'you', 'can', "'", 't', 'expect', 'd', '##v', '##x', 'to', 'be', 'terribly', 'stable', '.', '.', '.', ')', '>', '2', ')', 'how', 'does', 'it', 'send', 'the', 'information', 'from', 'a', 'ms', 'windows', 'app', 'over', '>', 'the', 'x', '##11', 'protocol', '?', 'does', 'it', 'just', 'draw', 'everything', 'as', 'graphics', 'into', '>', 'one', 'window', ',', 'or', 'does', 'it', 'use', 'multiple', 'windows', 'and', 'essentially', 'work', '>', 'more', 'clever', '##ly', '?', 'it', 'just', 'goes', 'as', 'a', 'window', 'that', 'has', 'graphics', 'drawn', 'into', 'it', '.', '(', 'to', 'vastly', 'over', '-', 'sim', '##plify', 'what', 'goes', 'on', ',', 'we', 'just', 'take', 'the', 'windows', 'graphics', 'api', 'calls', ',', 'and', 'translate', 'them', 'directly', 'to', 'x', '-', 'protocol', ';', 'unfortunately', ',', 'windows', 'was', 'not', 'really', 'written', 'to', 'be', 'network', '-', 'aware', ',', 'so', 'sometimes', 'we', 'see', 'a', 'speed', 'penalty', 'when', 'an', 'app', 'does', 'something', 'stupid', ',', 'like', 'sending', 'a', 'big', 'white', 'bit', '##ma', '##p', 'to', 'erase', 'something', 'rather', 'than', 'just', 'drawing', 'a', 'white', 'box', ';', 'fortunately', ',', 'that', 'sort', 'of', 'thing', 'is', 'rare', '.', '.', '.', ')', '>', '3', ')', 'if', 'i', 'want', 'to', 'run', 'ms', 'word', ',', 'for', 'example', ',', 'remotely', ',', 'do', 'i', 'have', 'to', '>', 'run', 'a', 'separate', 'copy', 'of', 'ms', 'windows', 'remotely', ',', 'and', 'then', 'start', 'ms', '>', 'word', 'from', 'that', ',', 'or', 'can', 'ms', 'word', 'be', 'started', 'remotely', 'on', 'its', 'own', '?', 'you', 'need', 'to', 'run', 'ms', 'windows', ',', 'which', 'word', 'then', 'runs', 'inside', '.', 'you', 'could', 'run', 'multiple', 'windows', 'programs', 'within', 'the', 'one', 'win', '##x', 'window', ',', 'and', 'windows', 'has', 'ways', 'to', 'auto', '##ma', '##gical', '##ly', 'start', 'win', '##app', '##s', 'when', 'you', 'start', 'windows', ',', 'so', 'in', 'practice', 'it', "'", 's', 'not', 'really', 'a', 'major', 'problem', '.', 'i', 'have', 'my', 'system', 'set', 'up', 'so', 'that', 'i', 'can', 'run', 'win', '##x', ',', 'which', 'automatically', 'starts', 'word', 'full', '-', 'screen', '(', 'for', 'windows', ')', ',', 'so', 'i', 'never', 'see', 'any', 'part', 'of', 'windows', 'but', 'word', '.', '.', '.', ')', '-', '-', 'quarter', '##deck', 'office', 'systems', '-', 'internet', 'support', '-', 'tom', 'bo', '##rte', '##ls', 'pricing', '/', 'ordering', ':', 'info', '@', 'q', '##deck', '.', 'com', '|', 'tech', 'questions', ':', 'support', '@', 'q', '##deck', '.', 'com', 'bb', '##s', ':', '(', '310', ')', '314', '-', '322', '##7', '*', 'fa', '##x', ':', '(', '310', ')', '314', '-', '321', '##7', '*', 'com', '##pus', '##er', '##ve', ':', 'go', 'quarter', '##deck', 'anonymous', 'ft', '##p', ':', 'q', '##deck', '.', 'com', '(', '149', '.', '17', '.', '8', '.', '10', ')', ',', 'leave', 'your', 'email', 'address', 'as', 'password']
+The truncated tokenized first training sentence:
+['[CLS]', 'in', 'article', '<', 'c', '##6', '##bf', '##lb', '.', 'ke', '##m', '@', 'cs', '.', 'columbia', '.', 'ed', '##u', '>', 'ethan', '@', 'cs', '.', 'columbia', '.', 'ed', '##u', '(', 'ethan', 'solo', '##mit', '##a', ')', 'writes', ':', '>', '>', 'three', 'q', "'", 's', ':', '>', '>', '1', ')', 'is', 'it', 'reliable', '?', 'i', 'use', 'it', 'all', 'day', 'every', 'day', '(', 'maintaining', 'our', 'ft', '##p', 'site', 'and', 'answering', 'mail', 'via', 'support', '@', 'q', '##deck', '.', 'com', ')', ',', 'and', 'i', 'can', 'honestly', 'say', 'that', 'in', 'the', 'last', 'few', 'months', 'i', "'", 've', 'never', 'had', 'my', 'machine', 'go', 'down', 'due', 'to', 'any', 'sort', 'of', 'tc', '##pi', '##p', 'network', 'manager', 'instability', '.', '(', 'of', 'course', ',', 'i', "'", 've', 'crashed', 'my', 'machine', 'quite', 'a', 'few', 'times', 'on', 'purpose', ',', 'during', 'beta', 'testing', 'SEP']
+The indices of the first training sentence:
+[  101  1999  3720  1026  1039  2575 29292 20850  1012 17710  2213  1030
+ 20116  1012  3996  1012  3968  2226  1028  6066  1030 20116  1012  3996
+  1012  3968  2226  1006  6066  3948 22930  2050  1007  7009  1024  1028
+  1028  2093  1053  1005  1055  1024  1028  1028  1015  1007  2003  2009
+ 10539  1029  1045  2224  2009  2035  2154  2296  2154  1006  8498  2256
+  3027  2361  2609  1998 10739  5653  3081  2490  1030  1053 26547  1012
+  4012  1007  1010  1998  1045  2064  9826  2360  2008  1999  1996  2197
+  2261  2706  1045  1005  2310  2196  2018  2026  3698  2175  2091  2349
+  2000  2151  4066  1997 22975  8197  2361  2897  3208 18549  1012  1006
+  1997  2607  1010  1045  1005  2310  8007  2026  3698  3243  1037  2261
+  2335  2006  3800  1010  2076  8247  5604   100]
+Train: 14397 messages
+Validation: 1600 messages
+Test: 4000 messages
+Initializing BertForSequenceClassification
+Epoch 1: train loss: 1.810361 train accuracy: 47.53%, val accuracy: 68.44%
+Epoch 2: train loss: 0.797959 train accuracy: 76.77%, val accuracy: 75.62%
+Epoch 3: train loss: 0.535682 train accuracy: 84.14%, val accuracy: 78.00%
+Epoch 4: train loss: 0.407942 train accuracy: 88.37%, val accuracy: 78.50%
+Total training time: 0:06:10.719959.
+
+Testing: accuracy: 81.27%

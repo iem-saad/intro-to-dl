@@ -1,0 +1,95 @@
+The following modules were not unloaded:
+  (Use "module --force purge" to unload all):
+
+  1) ModuleLabel/label   2) lumi-tools/24.05   3) init-lumi/0.2
+
+The following sticky modules could not be reloaded:
+
+  1) lumi-tools
+NOTE: This module uses Singularity. Some commands execute inside the container
+(e.g. python3, pip3).
+
+This module has been installed by CSC.
+
+Documentation: https://docs.csc.fi/apps/pytorch/
+Support: https://docs.csc.fi/support/contact/
+
+python3 $*
++ python3 pytorch_dvc_cnn_simple.py
+Using PyTorch version: 2.4.1+rocm6.1  Device: cuda
+TensorBoard log directory: /pfs/lustrep1/users/sabdulla/PDL-2024-11/intro-to-dl/day2/logs/dvc-2024-11-13_11-03-17
+Train: Found 2000 images belonging to 2 classes
+Validation: Found 1000 images belonging to 2 classes
+Test: Found 22000 images belonging to 2 classes
+Net(
+  (layers): Sequential(
+    (0): Conv2d(3, 32, kernel_size=(3, 3), stride=(1, 1))
+    (1): ReLU()
+    (2): MaxPool2d(kernel_size=(2, 2), stride=(2, 2), padding=0, dilation=1, ceil_mode=False)
+    (3): Conv2d(32, 32, kernel_size=(3, 3), stride=(1, 1))
+    (4): ReLU()
+    (5): MaxPool2d(kernel_size=(2, 2), stride=(2, 2), padding=0, dilation=1, ceil_mode=False)
+    (6): Conv2d(32, 64, kernel_size=(3, 3), stride=(1, 1))
+    (7): ReLU()
+    (8): MaxPool2d(kernel_size=(2, 2), stride=(2, 2), padding=0, dilation=1, ceil_mode=False)
+    (9): Flatten(start_dim=1, end_dim=-1)
+    (10): Linear(in_features=18496, out_features=64, bias=True)
+    (11): ReLU()
+    (12): Dropout(p=0.5, inplace=False)
+    (13): Linear(in_features=64, out_features=1, bias=True)
+    (14): Sigmoid()
+  )
+)
+Epoch 1: train loss: 0.693799 train accuracy: 49.10%, val accuracy: 50.00%
+Epoch 2: train loss: 0.693390 train accuracy: 50.30%, val accuracy: 50.00%
+Epoch 3: train loss: 0.693276 train accuracy: 49.90%, val accuracy: 52.00%
+Epoch 4: train loss: 0.692793 train accuracy: 51.30%, val accuracy: 50.00%
+Epoch 5: train loss: 0.692878 train accuracy: 50.05%, val accuracy: 50.00%
+Epoch 6: train loss: 0.692607 train accuracy: 50.65%, val accuracy: 54.20%
+Epoch 7: train loss: 0.692440 train accuracy: 52.50%, val accuracy: 55.70%
+Epoch 8: train loss: 0.691685 train accuracy: 53.05%, val accuracy: 54.60%
+Epoch 9: train loss: 0.690242 train accuracy: 53.40%, val accuracy: 54.00%
+Epoch 10: train loss: 0.688751 train accuracy: 55.30%, val accuracy: 54.40%
+Epoch 11: train loss: 0.687199 train accuracy: 54.85%, val accuracy: 55.70%
+Epoch 12: train loss: 0.682615 train accuracy: 55.95%, val accuracy: 55.10%
+Epoch 13: train loss: 0.684684 train accuracy: 56.30%, val accuracy: 55.90%
+Epoch 14: train loss: 0.677572 train accuracy: 58.25%, val accuracy: 57.90%
+Epoch 15: train loss: 0.677273 train accuracy: 57.40%, val accuracy: 54.90%
+Epoch 16: train loss: 0.676367 train accuracy: 58.70%, val accuracy: 61.10%
+Epoch 17: train loss: 0.671125 train accuracy: 59.90%, val accuracy: 62.60%
+Epoch 18: train loss: 0.665643 train accuracy: 60.25%, val accuracy: 61.40%
+Epoch 19: train loss: 0.654298 train accuracy: 63.15%, val accuracy: 62.30%
+Epoch 20: train loss: 0.648944 train accuracy: 63.75%, val accuracy: 64.00%
+Epoch 21: train loss: 0.632703 train accuracy: 64.80%, val accuracy: 62.90%
+Epoch 22: train loss: 0.632108 train accuracy: 64.95%, val accuracy: 64.40%
+Epoch 23: train loss: 0.621947 train accuracy: 65.40%, val accuracy: 64.60%
+Epoch 24: train loss: 0.618194 train accuracy: 66.45%, val accuracy: 66.40%
+Epoch 25: train loss: 0.606398 train accuracy: 66.90%, val accuracy: 68.80%
+Epoch 26: train loss: 0.597360 train accuracy: 66.70%, val accuracy: 68.80%
+Epoch 27: train loss: 0.606682 train accuracy: 67.65%, val accuracy: 69.20%
+Epoch 28: train loss: 0.593280 train accuracy: 69.20%, val accuracy: 69.10%
+Epoch 29: train loss: 0.589729 train accuracy: 69.35%, val accuracy: 69.30%
+Epoch 30: train loss: 0.580226 train accuracy: 69.70%, val accuracy: 65.90%
+Epoch 31: train loss: 0.647793 train accuracy: 64.40%, val accuracy: 65.60%
+Epoch 32: train loss: 0.610597 train accuracy: 66.80%, val accuracy: 67.30%
+Epoch 33: train loss: 0.603893 train accuracy: 68.50%, val accuracy: 68.30%
+Epoch 34: train loss: 0.584062 train accuracy: 69.70%, val accuracy: 69.50%
+Epoch 35: train loss: 0.579453 train accuracy: 70.30%, val accuracy: 61.50%
+Epoch 36: train loss: 0.579511 train accuracy: 69.95%, val accuracy: 70.10%
+Epoch 37: train loss: 0.562832 train accuracy: 71.50%, val accuracy: 70.50%
+Epoch 38: train loss: 0.558091 train accuracy: 71.75%, val accuracy: 72.60%
+Epoch 39: train loss: 0.549949 train accuracy: 71.90%, val accuracy: 72.40%
+Epoch 40: train loss: 0.543321 train accuracy: 72.30%, val accuracy: 63.60%
+Epoch 41: train loss: 0.537635 train accuracy: 73.55%, val accuracy: 70.00%
+Epoch 42: train loss: 0.541506 train accuracy: 73.10%, val accuracy: 64.50%
+Epoch 43: train loss: 0.543097 train accuracy: 73.95%, val accuracy: 71.60%
+Epoch 44: train loss: 0.528930 train accuracy: 72.50%, val accuracy: 72.50%
+Epoch 45: train loss: 0.513627 train accuracy: 75.15%, val accuracy: 69.30%
+Epoch 46: train loss: 0.507466 train accuracy: 75.00%, val accuracy: 71.00%
+Epoch 47: train loss: 0.496812 train accuracy: 76.45%, val accuracy: 73.80%
+Epoch 48: train loss: 0.491949 train accuracy: 76.75%, val accuracy: 71.40%
+Epoch 49: train loss: 0.488730 train accuracy: 76.80%, val accuracy: 64.30%
+Epoch 50: train loss: 0.486523 train accuracy: 75.20%, val accuracy: 73.70%
+Total training time: 0:02:35.247789.
+
+Testing: accuracy: 72.90%

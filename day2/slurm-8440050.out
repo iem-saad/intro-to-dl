@@ -1,0 +1,27 @@
+The following modules were not unloaded:
+  (Use "module --force purge" to unload all):
+
+  1) ModuleLabel/label   2) lumi-tools/24.05   3) init-lumi/0.2
+
+The following sticky modules could not be reloaded:
+
+  1) lumi-tools
+NOTE: This module uses Singularity. Some commands execute inside the container
+(e.g. python3, pip3).
+
+This module has been installed by CSC.
+
+Documentation: https://docs.csc.fi/apps/pytorch/
+Support: https://docs.csc.fi/support/contact/
+
+python3 $*
++ python3 pytorch_20ng_bert_tuned.py
+/usr/local/lib/python3.10/dist-packages/transformers/tokenization_utils_base.py:1601: FutureWarning: `clean_up_tokenization_spaces` was not set. It will be set to `True` by default. This behavior will be depracted in transformers v4.45, and will be then set to `False` by default. For more details check this issue: https://github.com/huggingface/transformers/issues/31884
+  warnings.warn(
+Using PyTorch version: 2.4.1+rocm6.1  Device: cuda
+Traceback (most recent call last):
+  File "/pfs/lustrep1/users/sabdulla/PDL-2024-11/intro-to-dl/day2/pytorch_20ng_bert_tuned.py", line 181, in <module>
+    main()
+  File "/pfs/lustrep1/users/sabdulla/PDL-2024-11/intro-to-dl/day2/pytorch_20ng_bert_tuned.py", line 122, in main
+    train_dataset = TensorDataset(train_inputs, train_masks, train_labels)
+NameError: name 'train_inputs' is not defined

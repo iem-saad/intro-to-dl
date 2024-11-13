@@ -1,0 +1,146 @@
+The following modules were not unloaded:
+  (Use "module --force purge" to unload all):
+
+  1) ModuleLabel/label   2) lumi-tools/24.05   3) init-lumi/0.2
+
+The following sticky modules could not be reloaded:
+
+  1) lumi-tools
+NOTE: This module uses Singularity. Some commands execute inside the container
+(e.g. python3, pip3).
+
+This module has been installed by CSC.
+
+Documentation: https://docs.csc.fi/apps/pytorch/
+Support: https://docs.csc.fi/support/contact/
+
+python3 $*
++ python3 pytorch_gtsrb_cnn_pretrained.py
+Using PyTorch version: 2.4.1+rocm6.1  Device: cuda
+TensorBoard log directory: /pfs/lustrep1/users/sabdulla/PDL-2024-11/intro-to-dl/day2/logs/gtsrb-pretrained-2024-11-13_11-21-42
+Train: Found 5535 images belonging to 43 classes
+Validation: Removing directory 00027
+Removing directory 00039
+Found 999 images belonging to 41 classes
+Test: Found 12630 images belonging to 43 classes
+PretrainedNet(
+  (vgg_features): Sequential(
+    (0): Conv2d(3, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (1): ReLU(inplace=True)
+    (2): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (3): ReLU(inplace=True)
+    (4): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+    (5): Conv2d(64, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (6): ReLU(inplace=True)
+    (7): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (8): ReLU(inplace=True)
+    (9): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+    (10): Conv2d(128, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (11): ReLU(inplace=True)
+    (12): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (13): ReLU(inplace=True)
+    (14): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (15): ReLU(inplace=True)
+    (16): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+    (17): Conv2d(256, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (18): ReLU(inplace=True)
+    (19): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (20): ReLU(inplace=True)
+    (21): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (22): ReLU(inplace=True)
+    (23): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+    (24): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (25): ReLU(inplace=True)
+    (26): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (27): ReLU(inplace=True)
+    (28): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (29): ReLU(inplace=True)
+    (30): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+  )
+  (own_layers): Sequential(
+    (0): Flatten(start_dim=1, end_dim=-1)
+    (1): Linear(in_features=2048, out_features=256, bias=True)
+    (2): ReLU()
+    (3): Linear(in_features=256, out_features=43, bias=True)
+  )
+)
+Epoch 1: train accuracy: 26.36%, val accuracy: 34.73%
+Epoch 2: train accuracy: 44.34%, val accuracy: 42.24%
+Epoch 3: train accuracy: 51.29%, val accuracy: 47.85%
+Epoch 4: train accuracy: 56.77%, val accuracy: 50.45%
+Epoch 5: train accuracy: 61.48%, val accuracy: 57.06%
+Epoch 6: train accuracy: 65.42%, val accuracy: 59.76%
+Epoch 7: train accuracy: 68.64%, val accuracy: 59.96%
+Epoch 8: train accuracy: 71.29%, val accuracy: 60.86%
+Epoch 9: train accuracy: 73.10%, val accuracy: 61.76%
+Epoch 10: train accuracy: 75.79%, val accuracy: 59.36%
+Epoch 11: train accuracy: 77.24%, val accuracy: 63.56%
+Epoch 12: train accuracy: 78.12%, val accuracy: 62.16%
+Epoch 13: train accuracy: 79.57%, val accuracy: 66.57%
+Epoch 14: train accuracy: 81.05%, val accuracy: 66.27%
+Epoch 15: train accuracy: 82.75%, val accuracy: 67.77%
+Epoch 16: train accuracy: 83.22%, val accuracy: 68.67%
+Epoch 17: train accuracy: 84.28%, val accuracy: 69.87%
+Epoch 18: train accuracy: 85.65%, val accuracy: 70.07%
+Epoch 19: train accuracy: 85.55%, val accuracy: 70.37%
+Epoch 20: train accuracy: 86.90%, val accuracy: 71.07%
+Total training time: 0:00:58.516552.
+
+Testing (pretrained, before fine-tuning): accuracy: 53.63%
+
+Marking layers for training (+) or frozen (-):
+0 - Conv2d(3, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1)) 64
+1   ReLU(inplace=True) 64
+2 - Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1)) 64
+3   ReLU(inplace=True) 64
+4   MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False) 64
+5 - Conv2d(64, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1)) 128
+6   ReLU(inplace=True) 128
+7 - Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1)) 128
+8   ReLU(inplace=True) 128
+9   MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False) 128
+10 - Conv2d(128, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1)) 256
+11   ReLU(inplace=True) 256
+12 - Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1)) 256
+13   ReLU(inplace=True) 256
+14 - Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1)) 256
+15   ReLU(inplace=True) 256
+16   MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False) 256
+17 - Conv2d(256, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1)) 512
+18   ReLU(inplace=True) 512
+19 - Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1)) 512
+20   ReLU(inplace=True) 512
+21 - Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1)) 512
+22   ReLU(inplace=True) 512
+23   MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False) 512
+24 + Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1)) 512
+25   ReLU(inplace=True) 512
+26 + Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1)) 512
+27   ReLU(inplace=True) 512
+28 + Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1)) 512
+29   ReLU(inplace=True) 512
+30   MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False) 512
+Epoch 21: train loss: 0.349446 train accuracy: 89.34%, val accuracy: 75.58%
+Epoch 22: train loss: 0.218049 train accuracy: 93.86%, val accuracy: 77.38%
+Epoch 23: train loss: 0.166391 train accuracy: 95.66%, val accuracy: 79.78%
+Epoch 24: train loss: 0.133249 train accuracy: 96.44%, val accuracy: 80.48%
+Epoch 25: train loss: 0.093985 train accuracy: 97.90%, val accuracy: 80.38%
+Epoch 26: train loss: 0.081952 train accuracy: 98.16%, val accuracy: 81.88%
+Epoch 27: train loss: 0.062027 train accuracy: 98.66%, val accuracy: 82.68%
+Epoch 28: train loss: 0.054680 train accuracy: 98.77%, val accuracy: 81.78%
+Epoch 29: train loss: 0.044207 train accuracy: 98.95%, val accuracy: 82.58%
+Epoch 30: train loss: 0.035481 train accuracy: 99.30%, val accuracy: 82.68%
+Epoch 31: train loss: 0.030134 train accuracy: 99.40%, val accuracy: 83.58%
+Epoch 32: train loss: 0.025233 train accuracy: 99.48%, val accuracy: 83.48%
+Epoch 33: train loss: 0.023362 train accuracy: 99.62%, val accuracy: 84.68%
+Epoch 34: train loss: 0.017643 train accuracy: 99.73%, val accuracy: 84.48%
+Epoch 35: train loss: 0.016445 train accuracy: 99.67%, val accuracy: 82.78%
+Epoch 36: train loss: 0.013793 train accuracy: 99.78%, val accuracy: 84.48%
+Epoch 37: train loss: 0.012103 train accuracy: 99.73%, val accuracy: 84.18%
+Epoch 38: train loss: 0.012730 train accuracy: 99.78%, val accuracy: 83.98%
+Epoch 39: train loss: 0.010522 train accuracy: 99.84%, val accuracy: 86.39%
+Epoch 40: train loss: 0.010553 train accuracy: 99.77%, val accuracy: 85.49%
+Total fine-tuning time: 0:01:02.826757.
+
+Testing (pretrained, after fine-tuning): accuracy: 67.59%
+

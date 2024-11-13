@@ -1,0 +1,21 @@
+The following modules were not unloaded:
+  (Use "module --force purge" to unload all):
+
+  1) ModuleLabel/label   2) lumi-tools/24.05   3) init-lumi/0.2
+
+The following sticky modules could not be reloaded:
+
+  1) lumi-tools
+NOTE: This module uses Singularity. Some commands execute inside the container
+(e.g. python3, pip3).
+
+This module has been installed by CSC.
+
+Documentation: https://docs.csc.fi/apps/pytorch/
+Support: https://docs.csc.fi/support/contact/
+
+python3 $*
++ python3 pytorch_20ng_bert_tuned.py
+  File "/pfs/lustrep1/users/sabdulla/PDL-2024-11/intro-to-dl/day2/pytorch_20ng_bert_tuned.py", line 223
+    print(f"Epoch {epoch+1}: "
+IndentationError: unexpected indent

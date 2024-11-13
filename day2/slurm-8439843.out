@@ -1,0 +1,122 @@
+The following modules were not unloaded:
+  (Use "module --force purge" to unload all):
+
+  1) ModuleLabel/label   2) lumi-tools/24.05   3) init-lumi/0.2
+
+The following sticky modules could not be reloaded:
+
+  1) lumi-tools
+NOTE: This module uses Singularity. Some commands execute inside the container
+(e.g. python3, pip3).
+
+This module has been installed by CSC.
+
+Documentation: https://docs.csc.fi/apps/pytorch/
+Support: https://docs.csc.fi/support/contact/
+
+python3 $*
++ python3 pytorch_20ng_cnn.py
+Using PyTorch version: 2.4.1+rocm6.1  Device: cuda
+TensorBoard log directory: /pfs/lustrep1/users/sabdulla/PDL-2024-11/intro-to-dl/day2/logs/20ng-cnn-2024-11-13_13-15-26
+Indexing word vectors.
+Found 400001 word vectors.
+Processing text dataset
+- alt.atheism 0
+- comp.graphics 1
+- comp.os.ms-windows.misc 2
+- comp.sys.ibm.pc.hardware 3
+- comp.sys.mac.hardware 4
+- comp.windows.x 5
+- misc.forsale 6
+- rec.autos 7
+- rec.motorcycles 8
+- rec.sport.baseball 9
+- rec.sport.hockey 10
+- sci.crypt 11
+- sci.electronics 12
+- sci.med 13
+- sci.space 14
+- soc.religion.christian 15
+- talk.politics.guns 16
+- talk.politics.mideast 17
+- talk.politics.misc 18
+- talk.religion.misc 19
+Found 19997 texts.
+Found 9998 unique tokens.
+Shape of data tensor: (19997, 1000)
+Length of label vector: 19997
+Shape of training data tensor: (14997, 1000)
+Length of training label vector: 14997
+Shape of validation data tensor: (1000, 1000)
+Length of validation label vector: 1000
+Shape of test data tensor: (4000, 1000)
+Length of test label vector: 4000
+Train: 14997 messages
+Validation: 1000 messages
+Test: 4000 messages
+Preparing embedding matrix.
+Shape of embedding matrix: torch.Size([10000, 100])
+Words not found in pre-trained embeddings: 233
+Net(
+  (emb): Embedding(10000, 100)
+  (layers): Sequential(
+    (0): Conv1d(100, 128, kernel_size=(5,), stride=(1,))
+    (1): ReLU()
+    (2): MaxPool1d(kernel_size=5, stride=5, padding=0, dilation=1, ceil_mode=False)
+    (3): Conv1d(128, 128, kernel_size=(5,), stride=(1,))
+    (4): ReLU()
+    (5): MaxPool1d(kernel_size=5, stride=5, padding=0, dilation=1, ceil_mode=False)
+    (6): Conv1d(128, 128, kernel_size=(5,), stride=(1,))
+    (7): ReLU()
+    (8): AdaptiveMaxPool1d(output_size=1)
+  )
+  (linear_layers): Sequential(
+    (0): Flatten(start_dim=1, end_dim=-1)
+    (1): Linear(in_features=128, out_features=128, bias=True)
+    (2): ReLU()
+    (3): Linear(in_features=128, out_features=20, bias=True)
+  )
+)
+Epoch 1: train loss: 2.580140 train accuracy: 13.60%, val accuracy: 25.10%
+Epoch 2: train loss: 1.953786 train accuracy: 28.50%, val accuracy: 33.50%
+Epoch 3: train loss: 1.730788 train accuracy: 37.29%, val accuracy: 34.90%
+Epoch 4: train loss: 1.569120 train accuracy: 42.82%, val accuracy: 39.50%
+Epoch 5: train loss: 1.402318 train accuracy: 50.16%, val accuracy: 48.10%
+Epoch 6: train loss: 1.224236 train accuracy: 56.61%, val accuracy: 51.30%
+Epoch 7: train loss: 1.111235 train accuracy: 60.69%, val accuracy: 54.10%
+Epoch 8: train loss: 1.009485 train accuracy: 64.67%, val accuracy: 57.30%
+Epoch 9: train loss: 0.925241 train accuracy: 67.40%, val accuracy: 60.40%
+Epoch 10: train loss: 0.854424 train accuracy: 69.89%, val accuracy: 60.50%
+Epoch 11: train loss: 0.787836 train accuracy: 72.52%, val accuracy: 62.50%
+Epoch 12: train loss: 0.708983 train accuracy: 75.13%, val accuracy: 62.90%
+Epoch 13: train loss: 0.646428 train accuracy: 77.15%, val accuracy: 65.00%
+Epoch 14: train loss: 0.599152 train accuracy: 79.06%, val accuracy: 65.50%
+Epoch 15: train loss: 0.537448 train accuracy: 81.04%, val accuracy: 64.10%
+Epoch 16: train loss: 0.485331 train accuracy: 82.48%, val accuracy: 64.10%
+Epoch 17: train loss: 0.428613 train accuracy: 85.01%, val accuracy: 66.10%
+Epoch 18: train loss: 0.395523 train accuracy: 85.82%, val accuracy: 66.50%
+Epoch 19: train loss: 0.358940 train accuracy: 87.30%, val accuracy: 66.30%
+Epoch 20: train loss: 0.324054 train accuracy: 88.79%, val accuracy: 63.30%
+Epoch 21: train loss: 0.287078 train accuracy: 89.84%, val accuracy: 66.70%
+Epoch 22: train loss: 0.248789 train accuracy: 91.38%, val accuracy: 66.20%
+Epoch 23: train loss: 0.277536 train accuracy: 90.21%, val accuracy: 64.70%
+Epoch 24: train loss: 0.230129 train accuracy: 92.05%, val accuracy: 65.70%
+Epoch 25: train loss: 0.199803 train accuracy: 93.09%, val accuracy: 67.20%
+Epoch 26: train loss: 0.172582 train accuracy: 94.19%, val accuracy: 65.60%
+Epoch 27: train loss: 0.157864 train accuracy: 94.69%, val accuracy: 66.20%
+Epoch 28: train loss: 0.165207 train accuracy: 94.28%, val accuracy: 63.80%
+Epoch 29: train loss: 0.151072 train accuracy: 94.91%, val accuracy: 67.40%
+Epoch 30: train loss: 0.138453 train accuracy: 95.58%, val accuracy: 66.30%
+Epoch 31: train loss: 0.153206 train accuracy: 94.99%, val accuracy: 66.30%
+Epoch 32: train loss: 0.137144 train accuracy: 95.33%, val accuracy: 64.60%
+Epoch 33: train loss: 0.119475 train accuracy: 96.11%, val accuracy: 67.10%
+Epoch 34: train loss: 0.119006 train accuracy: 95.98%, val accuracy: 66.90%
+Epoch 35: train loss: 0.169431 train accuracy: 94.40%, val accuracy: 63.10%
+Epoch 36: train loss: 0.119009 train accuracy: 95.84%, val accuracy: 67.40%
+Epoch 37: train loss: 0.102711 train accuracy: 96.63%, val accuracy: 68.20%
+Epoch 38: train loss: 0.123588 train accuracy: 95.96%, val accuracy: 66.10%
+Epoch 39: train loss: 0.105916 train accuracy: 96.40%, val accuracy: 65.20%
+Epoch 40: train loss: 0.122231 train accuracy: 95.79%, val accuracy: 67.30%
+Total training time: 0:01:28.656148.
+
+Testing: accuracy: 70.30%
